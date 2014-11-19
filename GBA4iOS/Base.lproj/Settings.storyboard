@@ -444,7 +444,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="External Controller" id="s3c-lR-3lq" userLabel="Table View Section - External Controller">
+                            <tableViewSection headerTitle="External Controller" id="s3c-lR-3lq">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CreditsCell" textLabel="tNu-VX-c2N" detailTextLabel="czk-1N-GQI" style="IBUITableViewCellStyleValue1" id="m63-6B-cbj" customClass="GBASettingsTableViewCell">
                                         <rect key="frame" x="0.0" y="1447" width="600" height="44"/>
@@ -468,6 +468,34 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ffc-bk-p3v" customClass="GBASettingsTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ffc-bk-p3v" id="qc6-2H-qkn">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="956-7e-wuP">
+                                                    <rect key="frame" x="536" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="toggleKeyboardController:" destination="fFF-zm-sH1" eventType="valueChanged" id="r3k-m7-QgA"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use iCade Controller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3R0-H3-3DK">
+                                                    <rect key="frame" x="15" y="11" width="159.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="956-7e-wuP" firstAttribute="centerY" secondItem="3R0-H3-3DK" secondAttribute="centerY" id="Byq-Vo-Ada"/>
+                                                <constraint firstAttribute="centerY" secondItem="3R0-H3-3DK" secondAttribute="centerY" id="E8O-gZ-xeV"/>
+                                                <constraint firstAttribute="trailing" secondItem="956-7e-wuP" secondAttribute="trailing" constant="15" id="mWU-Ae-edj"/>
+                                                <constraint firstItem="956-7e-wuP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3R0-H3-3DK" secondAttribute="trailing" constant="8" id="nO1-5S-5Ck"/>
+                                                <constraint firstItem="3R0-H3-3DK" firstAttribute="leading" secondItem="qc6-2H-qkn" secondAttribute="leading" constant="15" id="uZd-pt-OQa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -794,6 +822,7 @@ For all the latest GBA4iOS updates, follow Riley Testut and Paul Thorsen.</strin
                         <outlet property="frameSkipSegmentedControl" destination="wCX-6F-d72" id="jfC-Vu-4k6"/>
                         <outlet property="homepageLabel" destination="wJt-pc-6cL" id="Slk-jg-uRC"/>
                         <outlet property="introAnimationSwitch" destination="nVu-aQ-sm2" id="mes-fm-BGu"/>
+                        <outlet property="keyboardControllerSwitch" destination="956-7e-wuP" id="2ub-4k-haw"/>
                         <outlet property="preferExternalAudioSwitch" destination="DUi-8T-x1x" id="71X-KY-HIm"/>
                         <outlet property="pushNotificationsEnabledLabel" destination="QJX-D8-fJ9" id="EXU-WC-ZLC"/>
                         <outlet property="rememberLastWebpageSwitch" destination="HaO-bL-vi1" id="jqk-Dy-ccz"/>

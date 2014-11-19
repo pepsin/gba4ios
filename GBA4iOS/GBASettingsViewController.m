@@ -55,6 +55,7 @@ NSString *const GBASettingsDropboxStatusChangedNotification = @"GBASettingsDropb
 @property (weak, nonatomic) IBOutlet UISwitch *airplaySwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *rememberLastWebpageSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *introAnimationSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *keyboardControllerSwitch;
 
 @property (weak, nonatomic) IBOutlet UILabel *dropboxSyncStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pushNotificationsEnabledLabel;
@@ -72,6 +73,7 @@ NSString *const GBASettingsDropboxStatusChangedNotification = @"GBASettingsDropb
 - (IBAction)jumpToRoundedOpacityValue:(UISlider *)sender;
 - (IBAction)toggleAirPlay:(UISwitch *)sender;
 - (IBAction)toggleIntroAnimation:(UISwitch *)sender;
+- (IBAction)toggleKeyboardController:(UISwitch *)sender;
 
 @end
 
@@ -138,6 +140,7 @@ NSString *const GBASettingsDropboxStatusChangedNotification = @"GBASettingsDropb
                                GBASettingsGBCSkinsKey: @{@"portrait": gbcDefaultString, @"landscape": gbcDefaultString},
                                GBASettingsControllerOpacityKey: @0.5,
                                GBASettingsAirPlayEnabledKey: @YES,
+                               GBASettingsKeyboardControllerKey: @NO,
                                GBASettingsEventDistributionPushNotificationsKey: @YES,
                                GBASettingsSoftwareUpdatePushNotificationsKey: @YES,
                                GBASettingsIntroAnimationKey: @YES,
@@ -161,6 +164,7 @@ NSString *const GBASettingsDropboxStatusChangedNotification = @"GBASettingsDropb
     self.controllerOpacitySlider.value = [[NSUserDefaults standardUserDefaults] floatForKey:GBASettingsControllerOpacityKey];
     self.rememberLastWebpageSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:GBASettingsRememberLastWebpageKey];
     self.introAnimationSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:GBASettingsIntroAnimationKey];
+    self.keyboardControllerSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:GBASettingsKeyboardControllerKey];
     
     NSString *percentage = [NSString stringWithFormat:@"%.f", self.controllerOpacitySlider.value * 100];
     percentage = [percentage stringByAppendingString:@"%"];
@@ -399,6 +403,12 @@ NSString *const GBASettingsDropboxStatusChangedNotification = @"GBASettingsDropb
 {
     [[NSUserDefaults standardUserDefaults] setBool:sender.on forKey:GBASettingsRememberLastWebpageKey];
     [[NSNotificationCenter defaultCenter] postNotificationName:GBASettingsDidChangeNotification object:self userInfo:@{@"key": GBASettingsRememberLastWebpageKey, @"value": @(sender.on)}];
+}
+
+- (IBAction)toggleKeyboardController:(UISwitch *)sender
+{
+    [[NSUserDefaults standardUserDefaults] setBool:sender.on forKey:GBASettingsKeyboardControllerKey];
+    [[NSNotificationCenter defaultCenter] postNotificationName:GBASettingsDidChangeNotification object:self userInfo:@{@"key": GBASettingsKeyboardControllerKey, @"value": @(sender.on)}];
 }
 
 #pragma mark - Selection

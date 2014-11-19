@@ -21,6 +21,7 @@
 #import "GBASyncManager.h"
 #import "UIScreen+Size.h"
 #import "GBAExternalController.h"
+#import "GBAKeyboardController.h"
 #import "GBASyncingDetailViewController.h"
 #import "GBAAppDelegate.h"
 #import "GBAEventDistributionViewController.h"
@@ -50,6 +51,7 @@ static GBAEmulationViewController *_emulationViewController;
 @property (weak, nonatomic) IBOutlet GBAEmulatorScreen *emulatorScreen;
 @property (strong, nonatomic) IBOutlet GBAControllerView *controllerView;
 @property (strong, nonatomic) GBAExternalController *externalController;
+@property (strong, nonatomic) GBAKeyboardController *keyboardController;
 @property (strong, nonatomic) UIActionSheet *pausedActionSheet;
 @property (weak, nonatomic) IBOutlet UIView *screenContainerView;
 @property (strong, nonatomic) CADisplayLink *displayLink;
@@ -783,6 +785,12 @@ static GBAEmulationViewController *_emulationViewController;
     [[NSNotificationCenter defaultCenter] postNotificationName:GBASettingsDidChangeNotification object:self userInfo:@{@"key": GBASettingsSelectedColorPaletteKey, @"value": @(overrideColorPalette)}];
 }
 
+- (void)createKeyboardControllerOverlayView
+{
+    self.keyboardController = [[GBAKeyboardController alloc] initWithFrame:self.view.bounds];
+    [self.view insertSubview:self.keyboardController aboveSubview:self.controllerView];
+}
+
 #pragma mark - Pause Menu
 
 - (void)controllerInputDidPressMenuButton:(id)controllerInput
@@ -1219,7 +1227,7 @@ static GBAEmulationViewController *_emulationViewController;
     instructionsLabel.lineBreakMode = NSLineBreakByWordWrapping;
     instructionsLabel.textAlignment = NSTextAlignmentCenter;
     
-    if (self.externalController)
+    if (self.externalController || self.keyboardController)
     {
         instructionsLabel.text = NSLocalizedString(@"Press the button you want to sustain.\n\nTo cancel or unsustain a previously sustained button, either tap the screen or press the Menu button.", @"");
     }
@@ -1234,7 +1242,7 @@ static GBAEmulationViewController *_emulationViewController;
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && self.controllerView.orientation == GBAControllerSkinOrientationLandscape)
     {
-        if (screenRectEmpty && self.externalController == nil) // With external controller, we want it to be centered
+        if (screenRectEmpty && (self.externalController == nil || self.keyboardController == nil)) // With external controller, we want it to be centered
         {
             instructionsLabel.center = ({
                 CGPoint center = instructionsLabel.center;
@@ -1653,6 +1661,19 @@ static GBAEmulationViewController *_emulationViewController;
             [self tearDownAirplayScreen];
         }
     }
+    
+    if ([[NSUserDefaults standardUserDefaults] floatForKey:GBASettingsKeyboardControllerKey])
+    {
+        [self createKeyboardControllerOverlayView];
+        self.keyboardController.delegate = self;
+        [self.keyboardController setActive:YES];
+    }
+    else
+    {
+        [self.keyboardController setActive:NO];
+        [self.keyboardController removeFromSuperview];
+        self.keyboardController = nil;
+    }
 }
 
 #pragma mark - Presenting/Dismissing
@@ -1940,6 +1961,11 @@ static GBAEmulationViewController *_emulationViewController;
     
     self.blurredContentsImageView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
     
+    if (self.keyboardController)
+    {
+        self.keyboardController.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
+    }
+    
     // Doesn't seem to work as of 7.0.2; overrides setting of alpha in willRotateToInterfaceOrientation:duration:, so no animation occurs
     //self.controllerView.alpha = 1.0;
     //self.blurredControllerImageView.alpha = 1.0;
@@ -2014,7 +2040,7 @@ static GBAEmulationViewController *_emulationViewController;
 
 - (void)updateControllerSkinForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if (self.externalController)
+    if (self.externalController || self.keyboardController)
     {
         GBAControllerSkin *invisibleSkin = [GBAControllerSkin invisibleSkin];
         
@@ -2143,7 +2169,7 @@ static GBAEmulationViewController *_emulationViewController;
             [self.screenContainerView addConstraint:self.screenVerticalCenterLayoutConstraint];
         }
         
-        if (CGRectIsEmpty(screenRect) || self.externalController)
+        if (CGRectIsEmpty(screenRect) || self.externalController || self.keyboardController)
         {
             [UIView animateWithDuration:0.4 animations:^{
                 self.screenHorizontalCenterLayoutConstraint.constant = 0;
@@ -2259,6 +2285,9 @@ static GBAEmulationViewController *_emulationViewController;
     });
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    
+    [self.view bringSubviewToFront:self.keyboardController];
+    [self.keyboardController setActive:YES];
 }
 
 - (void)stopEmulation
@@ -2272,6 +2301,8 @@ static GBAEmulationViewController *_emulationViewController;
     [self resumeEmulation]; // In case the ROM never unpaused (just keep it here please)
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+    
+    [self.keyboardController setActive:NO];
 }
 
 - (void)pauseEmulation
@@ -2344,6 +2375,10 @@ static GBAEmulationViewController *_emulationViewController;
     }
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    
+    [self.view bringSubviewToFront:self.keyboardController];
+    self.keyboardController.delegate = self;
+    [self.keyboardController setActive:YES];
 }
 
 - (void)updateFilter
@@ -2652,7 +2687,7 @@ static GBAEmulationViewController *_emulationViewController;
     GBAControllerSkin *controllerSkin = nil;
     UIImage *controllerSkinImage = nil;
     
-    if (self.externalController)
+    if (self.externalController || self.keyboardController)
     {
         controllerSkin = [GBAControllerSkin invisibleSkin];
         controllerSkinImage = nil;
@@ -2733,7 +2768,7 @@ static GBAEmulationViewController *_emulationViewController;
     {
         CGRect screenRect = [controllerSkin frameForMapping:GBAControllerSkinMappingScreen orientation:skinOrientation controllerDisplaySize:viewSize];
         
-        if (CGRectIsEmpty(screenRect) || self.externalController)
+        if (CGRectIsEmpty(screenRect) || self.externalController || self.keyboardController)
         {
             [self.emulatorScreen drawViewHierarchyInRect:CGRectMake((screenContainerSize.width - screenSize.width) / 2.0,
                                                                     (screenContainerSize.height - screenSize.height) / 2.0,
@@ -2831,7 +2866,7 @@ static GBAEmulationViewController *_emulationViewController;
 
 - (BOOL)isExternalControllerConnected
 {
-    return (self.externalController != nil);
+    return (self.externalController != nil || self.keyboardController != nil);
 }
 
 

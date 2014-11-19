@@ -14,6 +14,14 @@
 		308225E660A248A0AE8F221C /* libPods-GBA4iOS-Base-GBA4iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C0B1AAB834316C77F398B6 /* libPods-GBA4iOS-Base-GBA4iOS.a */; };
 		4996200C1BCB0E000010FBBE /* Acknowledgements.html in Resources */ = {isa = PBXBuildFile; fileRef = BFBA77B919B715E1000E8425 /* Acknowledgements.html */; };
 		2780A0501BFEF65700610628 /* UIDevice+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 2780A04F1BFEF65700610628 /* UIDevice+Private.m */; };
+		1AF2115617D570C700E3FEB7 /* GBAControllerSkinDownloadViewControllerOld.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2115417D570C700E3FEB7 /* GBAControllerSkinDownloadViewControllerOld.m */; };
+		36BB379009474825B993FD0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AFB44A5AB34C2982DE856F /* libPods.a */; };
+		6A36EEBC1A1A46CA0035DF1D /* GBAKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A36EEBB1A1A46CA0035DF1D /* GBAKeyboardController.m */; };
+		6A36EEBD1A1A46D00035DF1D /* GBAKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A36EEBB1A1A46CA0035DF1D /* GBAKeyboardController.m */; };
+		6A36EEC41A1A4BA00035DF1D /* iCadeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A36EEC01A1A4BA00035DF1D /* iCadeReaderView.m */; };
+		6A36EEC51A1A4BA00035DF1D /* iCadeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A36EEC01A1A4BA00035DF1D /* iCadeReaderView.m */; };
+		6A36EEC61A1A4BA00035DF1D /* LMBTControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A36EEC31A1A4BA00035DF1D /* LMBTControllerView.m */; };
+		6A36EEC71A1A4BA00035DF1D /* LMBTControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A36EEC31A1A4BA00035DF1D /* LMBTControllerView.m */; };
 		BF02AFDB182F3E590031B8B6 /* GBASyncingOverviewViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF02AFDA182F3E590031B8B6 /* GBASyncingOverviewViewController.mm */; };
 		BF02AFDF182F6E200031B8B6 /* GBASyncingDetailViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF02AFDE182F6E200031B8B6 /* GBASyncingDetailViewController.mm */; };
 		BF02D2C4197344950034A515 /* GBASoftwareUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF02D2C3197344950034A515 /* GBASoftwareUpdate.m */; };
@@ -500,6 +508,13 @@
 		61C6BF4F9F719B1132AF421A /* Pods-Base-GBA4iOS.jailbreak.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-GBA4iOS.jailbreak.xcconfig"; path = "Pods/Target Support Files/Pods-Base-GBA4iOS/Pods-Base-GBA4iOS.jailbreak.xcconfig"; sourceTree = "<group>"; };
 		672C1A6A58FF72B0B6EAB814 /* Pods-GBA4iOS-Base-GBA4iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBA4iOS-Base-GBA4iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GBA4iOS-Base-GBA4iOS/Pods-GBA4iOS-Base-GBA4iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		82D5D941B654155278B501D0 /* Pods-GBA4iOS-Base-GBA4iOS-Simulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBA4iOS-Base-GBA4iOS-Simulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GBA4iOS-Base-GBA4iOS-Simulator/Pods-GBA4iOS-Base-GBA4iOS-Simulator.debug.xcconfig"; sourceTree = "<group>"; };
+		6A36EEBA1A1A46CA0035DF1D /* GBAKeyboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBAKeyboardController.h; sourceTree = "<group>"; };
+		6A36EEBB1A1A46CA0035DF1D /* GBAKeyboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBAKeyboardController.m; sourceTree = "<group>"; };
+		6A36EEBF1A1A4BA00035DF1D /* iCadeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCadeReaderView.h; sourceTree = "<group>"; };
+		6A36EEC01A1A4BA00035DF1D /* iCadeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCadeReaderView.m; sourceTree = "<group>"; };
+		6A36EEC11A1A4BA00035DF1D /* iCadeState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCadeState.h; sourceTree = "<group>"; };
+		6A36EEC21A1A4BA00035DF1D /* LMBTControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMBTControllerView.h; sourceTree = "<group>"; };
+		6A36EEC31A1A4BA00035DF1D /* LMBTControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMBTControllerView.m; sourceTree = "<group>"; };
 		8782243FD47ECE841FACE25A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		87EF3139E19421E58193F7F6 /* Pods-Base-GBA4iOS-Simulator.jailbreak.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-GBA4iOS-Simulator.jailbreak.xcconfig"; path = "Pods/Target Support Files/Pods-Base-GBA4iOS-Simulator/Pods-Base-GBA4iOS-Simulator.jailbreak.xcconfig"; sourceTree = "<group>"; };
 		911809C44511286BF809841B /* Pods-Base-GBA4iOS-Simulator.ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-GBA4iOS-Simulator.ad hoc.xcconfig"; path = "Pods/Target Support Files/Pods-Base-GBA4iOS-Simulator/Pods-Base-GBA4iOS-Simulator.ad hoc.xcconfig"; sourceTree = "<group>"; };
@@ -1044,6 +1059,17 @@
 				2780A04F1BFEF65700610628 /* UIDevice+Private.m */,
 			);
 			name = Taptic;
+    };
+		6A36EEBE1A1A4BA00035DF1D /* iCade */ = {
+			isa = PBXGroup;
+			children = (
+				6A36EEBF1A1A4BA00035DF1D /* iCadeReaderView.h */,
+				6A36EEC01A1A4BA00035DF1D /* iCadeReaderView.m */,
+				6A36EEC11A1A4BA00035DF1D /* iCadeState.h */,
+				6A36EEC21A1A4BA00035DF1D /* LMBTControllerView.h */,
+				6A36EEC31A1A4BA00035DF1D /* LMBTControllerView.m */,
+			);
+			path = iCade;
 			sourceTree = "<group>";
 		};
 		BF02AFD8182F3E3A0031B8B6 /* Syncing */ = {
@@ -1663,12 +1689,15 @@
 			isa = PBXGroup;
 			children = (
 				2780A04C1BFEF64C00610628 /* Taptic */,
+				6A36EEBE1A1A4BA00035DF1D /* iCade */,
 				BFAFF47C1840084500E3240A /* GBAControllerInput.h */,
 				BFAFF47D18400D7300E3240A /* GBAExternalController.h */,
 				BF216BDE186937B8000A0DB8 /* GBAExternalController_Private.h */,
 				BFAFF47E18400D7300E3240A /* GBAExternalController.m */,
 				CC8D5A7817AAE3A800E89F43 /* GBAControllerView.h */,
 				CC8D5A7917AAE3A800E89F43 /* GBAControllerView.m */,
+				6A36EEBA1A1A46CA0035DF1D /* GBAKeyboardController.h */,
+				6A36EEBB1A1A46CA0035DF1D /* GBAKeyboardController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -2373,6 +2402,7 @@
 				BF16DCF3184FD32A0092A3F5 /* GBASyncUploadOperation.mm in Sources */,
 				BF2F351B183FF6F9002ACE90 /* RSTFileBrowserViewController.m in Sources */,
 				BF2942A6188A6E4000B96F98 /* GBAKeyboardDismissalNavigationController.m in Sources */,
+				6A36EEBD1A1A46D00035DF1D /* GBAKeyboardController.m in Sources */,
 				BF16DCF7184FD3430092A3F5 /* GBASyncDownloadOperation.mm in Sources */,
 				BFFBCCD71850505A005187DF /* GBASyncAllFilesOperation.mm in Sources */,
 				BFD03A9F1898E877001056A5 /* GBAEvent.m in Sources */,
@@ -2386,6 +2416,7 @@
 				BF2F352D183FF6F9002ACE90 /* UIScreen+Size.m in Sources */,
 				BF6ED57D1851100A0014B6A8 /* GBASyncManager.mm in Sources */,
 				BF47B36C19C6A5DD00030431 /* GBABluetoothLinkManager.mm in Sources */,
+				6A36EEC71A1A4BA00035DF1D /* LMBTControllerView.m in Sources */,
 				BF2F352E183FF6F9002ACE90 /* GBASplitViewController.mm in Sources */,
 				BF0EBB2019C05D1000703623 /* GBASettingsTableViewCell.m in Sources */,
 				BF2F352F183FF6F9002ACE90 /* GBAAsynchronousLocalImageTableViewCell.m in Sources */,
@@ -2412,6 +2443,7 @@
 				BFBAAF851977027F00754626 /* GBAEventDistributionOperation.m in Sources */,
 				BF7EC2EE196DF34300F61351 /* GBAClassicSplitViewController.m in Sources */,
 				BFFC588F186AB7CC00E7AC2F /* GBACalloutView.m in Sources */,
+				6A36EEC51A1A4BA00035DF1D /* iCadeReaderView.m in Sources */,
 				BF2F3550183FF6F9002ACE90 /* GBACheatManagerViewController.mm in Sources */,
 				BF2F3554183FF6F9002ACE90 /* GBACheatEditorViewController.m in Sources */,
 				BF58D31119B91550003B2B62 /* NSData+MD5.m in Sources */,
@@ -2510,6 +2542,7 @@
 				CCFA71B4179D2FE400768D24 /* TextEntry.cc in Sources */,
 				BF02AFDB182F3E590031B8B6 /* GBASyncingOverviewViewController.mm in Sources */,
 				CCFA7178179D2EAB00768D24 /* View.cc in Sources */,
+				6A36EEC61A1A4BA00035DF1D /* LMBTControllerView.m in Sources */,
 				CC5044EC1814DC69009F7B9E /* Cheats.cc in Sources */,
 				CCFA71AA179D2FE400768D24 /* MsgPopup.cc in Sources */,
 				CCC9B8951815AC7E005C90EE /* lyc_irq.cpp in Sources */,
@@ -2617,6 +2650,7 @@
 				CCFA71B0179D2FE400768D24 /* VideoImageOverlay.cc in Sources */,
 				BF2AC89218543BD9008928D0 /* GBASyncDeleteOperation.m in Sources */,
 				BF7EC2F2196E3A8F00F61351 /* GBAModernSplitViewController.m in Sources */,
+				6A36EEBC1A1A46CA0035DF1D /* GBAKeyboardController.m in Sources */,
 				CCFA718C179D2EAB00768D24 /* ResourceFace.cc in Sources */,
 				CC6A2D9817C50CE700EFC10E /* GBACheatEditorViewController.m in Sources */,
 				BF7C0E72189DA35800794093 /* SSZipArchive.m in Sources */,
@@ -2721,6 +2755,7 @@
 				CC5045131814DC69009F7B9E /* memgzio.c in Sources */,
 				BF537EF9184FE1AC00661C42 /* GBASyncFileOperation.mm in Sources */,
 				CCC9B8961815AC7E005C90EE /* next_m0_time.cpp in Sources */,
+				6A36EEC41A1A4BA00035DF1D /* iCadeReaderView.m in Sources */,
 				CCFA71B9179D2FE400768D24 /* InputManagerView.cc in Sources */,
 				BFFDAE1419BC2FD100BE5F74 /* GBAControllerSkinDownloadViewController.m in Sources */,
 				CC5045191814DC69009F7B9E /* 7zIn.c in Sources */,

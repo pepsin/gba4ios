@@ -21,6 +21,7 @@ static NSString *GBASettingsShowFramerateKey = @"showFramerate";
 static NSString *GBASettingsControllerOpacityKey = @"controllerOpacity";
 static NSString *GBASettingsDropboxSyncKey = @"dropboxSync";
 static NSString *GBASettingsExternalControllerButtonsKey = @"externalControllerButtons";
+static NSString *GBASettingsKeyboardControllerKey = @"keyboardController";
 static NSString *GBASettingsAirPlayEnabledKey = @"airPlayEnabled";
 static NSString *GBASettingsSelectedColorPaletteKey = @"selectedColorPalette";
 static NSString *GBASettingsLinkEnabled = @"linkEnabled";
