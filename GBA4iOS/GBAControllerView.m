@@ -11,6 +11,8 @@
 #import "UIScreen+Size.h"
 #import "UITouch+ControllerButtons.h"
 #import "UIDevice-Hardware.h"
+#import "UITapticEngine.h"
+#import "UIDevice+Private.h"
 
 @import AudioToolbox;
 
@@ -247,23 +249,32 @@ void AudioServicesPlaySystemSoundWithVibration(int, id, NSDictionary *);
 
 - (void)vibrate
 {
-    AudioServicesStopSystemSound(kSystemSoundID_Vibrate);
-    
-    int64_t vibrationLength = 30;
-    
-    if ([[UIDevice currentDevice] platformType] == UIDevice5SiPhone)
-    {
-        // iPhone 5S has a weaker vibration motor, so we vibrate for 10ms longer to compensate
-        vibrationLength = 40;
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(_tapticEngine)]) {
+        UITapticEngine *tapticEngine = [UIDevice currentDevice]._tapticEngine;
+        if (tapticEngine) {
+            [tapticEngine actuateFeedback:UITapticEngineFeedbackPeek];
+        }
     }
-    
-    NSArray *pattern = @[@NO, @0, @YES, @(vibrationLength)];
-    
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-    dictionary[@"VibePattern"] = pattern;
-    dictionary[@"Intensity"] = @1;
-    
-    AudioServicesPlaySystemSoundWithVibration(kSystemSoundID_Vibrate, nil, dictionary);
+    else
+    {
+        AudioServicesStopSystemSound(kSystemSoundID_Vibrate);
+        
+        int64_t vibrationLength = 30;
+        
+        if ([[UIDevice currentDevice] platformType] == UIDevice5SiPhone)
+        {
+            // iPhone 5S has a weaker vibration motor, so we vibrate for 10ms longer to compensate
+            vibrationLength = 40;
+        }
+        
+        NSArray *pattern = @[@NO, @0, @YES, @(vibrationLength)];
+        
+        NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+        dictionary[@"VibePattern"] = pattern;
+        dictionary[@"Intensity"] = @1;
+        
+        AudioServicesPlaySystemSoundWithVibration(kSystemSoundID_Vibrate, nil, dictionary);
+    }
 }
 
 - (NSSet *)buttonsForTouch:(UITouch *)touch
