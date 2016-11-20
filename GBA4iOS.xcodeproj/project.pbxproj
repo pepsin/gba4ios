@@ -2787,10 +2787,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "GBA4iOS/GBA4iOS-Info-Simulator.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-Objc",
 					"-all_load",
@@ -2835,10 +2832,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "GBA4iOS/GBA4iOS-Info-Simulator.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-Objc",
 					"-all_load",
@@ -2883,10 +2877,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "GBA4iOS/GBA4iOS-Info-Simulator.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-Objc",
 					"-all_load",
@@ -3093,10 +3084,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "GBA4iOS/GBA4iOS-Info-Simulator.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-Objc",
 					"-all_load",
@@ -3295,10 +3283,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "GBA4iOS/GBA4iOS-Info-Simulator.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-Objc",
 					"-all_load",

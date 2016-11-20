@@ -1640,11 +1640,11 @@ static void StartRFUIPC(u16 siocnt)
 // StartRFU4
 static void StartRFUSocket(u16 value)
 {
-    if (gGba.mem.ioMem.b == NULL)
-    {
-        return;
-    }
-    
+//    if (gGba.mem.ioMem.b == NULL)
+//    {
+//        return;
+//    }
+	
     if (value)
     {
         switch (GetSIOMode(value, READ16LE(&gGba.mem.ioMem.b[COMM_RCNT])))
@@ -2003,7 +2003,8 @@ u16 PrepareRFUSocket(u16 value)
                                                     linkmem.rfu_signal[gbaid] = 0xffffffff>>((3-(rfu_numclients))<<3);
                                                     linkmem.rfu_clientidx[gbaid] = rfu_numclients;
                                                     c_s.Unlock();
-                                                    rfu_clientlist[rfu_numclients] = rfu_masterdata[0/*rfu_qrecv-1*/] | (rfu_numclients++ << 16);
+                                                    rfu_clientlist[rfu_numclients] = rfu_masterdata[0/*rfu_qrecv-1*/] | (rfu_numclients << 16);
+													++rfu_numclients;
                                                     //rfu_numclients++;
                                                     //log("%d  Switch%02X:%d\n",GetTickCount(),rfu_cmd,gbaid);
                                                     rfu_masterq = 1; //data size
@@ -4576,12 +4577,12 @@ unsigned long GBARunWirelessAdaptorLoop()
             }
         }
         
-        if (!gGba.mem.ioMem.b)
-        {
-            GBALog("Error accessing ROM memory");
-            continue;
-        }
-        
+//        if (!gGba.mem.ioMem.b)
+//        {
+//            GBALog("Error accessing ROM memory");
+//            continue;
+//        }
+		
         c_s.Lock();
         u16 siocnt = READ16LE(&gGba.mem.ioMem.b[COMM_SIOCNT]);
         c_s.Unlock();
@@ -4850,9 +4851,9 @@ unsigned long GBARunWirelessAdaptorLoop2() //AdamN: Trying to reduce the lag by 
                                 }
                                 
                                 
-                                if (gGba.mem.ioMem.b)
-                                {
-                                    
+//                                if (gGba.mem.ioMem.b)
+//                                {
+								
                                     c_s.Lock();
                                     u16 siocnt = READ16LE(&gGba.mem.ioMem.b[COMM_SIOCNT]);
                                     c_s.Unlock();
@@ -4983,7 +4984,7 @@ unsigned long GBARunWirelessAdaptorLoop2() //AdamN: Trying to reduce the lag by 
                                             
                                             c_s.Lock();
                                             
-                                            if (cmd && gGba.mem.ioMem.b)
+                                            if (cmd)// && gGba.mem.ioMem.b)
                                             {
                                                 UPDATE_REG(RF_RECVCMD, cmd);
                                             }
@@ -4992,7 +4993,7 @@ unsigned long GBARunWirelessAdaptorLoop2() //AdamN: Trying to reduce the lag by 
                                             
                                         }
                                     }
-                                }
+//                                }
                             }
                         }
                     }

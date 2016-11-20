@@ -30,7 +30,7 @@ public:
 	BaseMenuView menu;
 	Rect2<int> rect;
 
-	Rect2<int> &viewRect() { return rect; }
+	Rect2<int> &viewRect() override { return rect; }
 
 	void init(const char *label, MenuItem **menuItem, bool highlightFirst);
 	void deinit() override;

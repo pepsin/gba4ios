@@ -87,6 +87,7 @@ dispatch_queue_t directoryContentsChangedQueue() {
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Emulation" bundle:nil];
     self = [storyboard instantiateViewControllerWithIdentifier:@"romTableViewController"];
     if (self)
@@ -224,7 +225,7 @@ dispatch_queue_t directoryContentsChangedQueue() {
         
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
         {
-            if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation))
+            if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation]))
             {
                 frame.size.height = 29.0f;
             }
