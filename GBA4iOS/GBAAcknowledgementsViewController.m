@@ -50,9 +50,11 @@
         UIFontDescriptor *fontDescriptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleSubheadline];
         fontDescriptor = [fontDescriptor fontDescriptorWithSymbolicTraits:symbolicTraits];
         UIFont *newFont = [UIFont fontWithDescriptor:fontDescriptor size:0.0];
-        
-        [attributedString addAttribute:NSFontAttributeName value:newFont range:range];
-        
+		// There appears to be a bug with fontDescriptorWithSymbolicTraits
+		// http://stackoverflow.com/questions/25977207/font-descriptor-returns-nil-in-ios-8
+		if (newFont != nil) {
+			[attributedString addAttribute:NSFontAttributeName value:newFont range:range];
+		}
     }];
     
     self.textView.attributedText = attributedString;
