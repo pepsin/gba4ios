@@ -21,9 +21,13 @@ void fixFilePermissions(const char *path)
 	FsSys::cPath execPath;
 	string_printf(execPath, "%s/fixMobilePermission '%s'", Base::appPath, path);
 	//logMsg("executing %s", execPath);
-	int err = system(execPath);
+	
+	// system is unavailable on non-jailbroken iPhones
+#if CONFIG_BASE_IOS_JB
+    int err = system(execPath);
 	if(err)
 	{
 		logWarn("error from fixMobilePermission helper: %d", err);
 	}
+#endif
 }

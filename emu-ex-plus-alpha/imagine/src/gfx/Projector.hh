@@ -55,7 +55,7 @@ struct Projector
 		GC x2 = viewPixelWidth(),y2 = viewPixelHeight(),z2 = .5;
 		unProject(x2,y2,z2);
 		//logMsg("Upper-right projection point %f %f %f",x2,y2,z2);
-		w = x2 - x, h = y2 - y;
+        w = x2 - x; h = y2 - y;
 		/*if(isSideways)
 			IG::swap(w, h);*/
 		rect.x = -w/2.;
