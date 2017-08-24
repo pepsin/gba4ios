@@ -7,15 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19748DB61F4F11D1003D0A1B /* UIDevice+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 19748DB51F4F11D1003D0A1B /* UIDevice+Private.m */; };
 		1A5BAE7F17D04B0A00BABC01 /* overlays128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BAE7E17D04B0A00BABC01 /* overlays128.png */; };
 		1AD65D7B17D2DCFD00E2CF0C /* GBAControllerSkinSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD65D7917D2DCFD00E2CF0C /* GBAControllerSkinSelectionViewController.m */; };
 		1AD971E717D2B6EC007097BC /* GBAControllerSkinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD971E617D2B6EC007097BC /* GBAControllerSkinDetailViewController.m */; };
 		1AD971F317D2C6ED007097BC /* GBAControllerSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD971F117D2C6ED007097BC /* GBAControllerSkin.m */; };
 		308225E660A248A0AE8F221C /* libPods-GBA4iOS-Base-GBA4iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C0B1AAB834316C77F398B6 /* libPods-GBA4iOS-Base-GBA4iOS.a */; };
 		4996200C1BCB0E000010FBBE /* Acknowledgements.html in Resources */ = {isa = PBXBuildFile; fileRef = BFBA77B919B715E1000E8425 /* Acknowledgements.html */; };
-		2780A0501BFEF65700610628 /* UIDevice+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 2780A04F1BFEF65700610628 /* UIDevice+Private.m */; };
-		1AF2115617D570C700E3FEB7 /* GBAControllerSkinDownloadViewControllerOld.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2115417D570C700E3FEB7 /* GBAControllerSkinDownloadViewControllerOld.m */; };
-		36BB379009474825B993FD0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AFB44A5AB34C2982DE856F /* libPods.a */; };
 		6A36EEBC1A1A46CA0035DF1D /* GBAKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A36EEBB1A1A46CA0035DF1D /* GBAKeyboardController.m */; };
 		6A36EEBD1A1A46D00035DF1D /* GBAKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A36EEBB1A1A46CA0035DF1D /* GBAKeyboardController.m */; };
 		6A36EEC41A1A4BA00035DF1D /* iCadeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A36EEC01A1A4BA00035DF1D /* iCadeReaderView.m */; };
@@ -488,6 +486,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		19748DB41F4F11D1003D0A1B /* UIDevice+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Private.h"; sourceTree = "<group>"; };
+		19748DB51F4F11D1003D0A1B /* UIDevice+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Private.m"; sourceTree = "<group>"; };
 		1A5BAE7E17D04B0A00BABC01 /* overlays128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlays128.png; sourceTree = "<group>"; };
 		1AD65D7817D2DCFD00E2CF0C /* GBAControllerSkinSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBAControllerSkinSelectionViewController.h; sourceTree = "<group>"; };
 		1AD65D7917D2DCFD00E2CF0C /* GBAControllerSkinSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBAControllerSkinSelectionViewController.m; sourceTree = "<group>"; };
@@ -499,15 +499,11 @@
 		1C62536D5F486319EFF72219 /* Pods-GBA4iOS-Base-GBA4iOS.jailbreak.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBA4iOS-Base-GBA4iOS.jailbreak.xcconfig"; path = "Pods/Target Support Files/Pods-GBA4iOS-Base-GBA4iOS/Pods-GBA4iOS-Base-GBA4iOS.jailbreak.xcconfig"; sourceTree = "<group>"; };
 		225C0E17BEB4B9A74166377A /* Pods-GBA4iOS-Base-GBA4iOS-Simulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBA4iOS-Base-GBA4iOS-Simulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-GBA4iOS-Base-GBA4iOS-Simulator/Pods-GBA4iOS-Base-GBA4iOS-Simulator.release.xcconfig"; sourceTree = "<group>"; };
 		228A841B01C005D91F7E58D8 /* Pods-GBA4iOS-Base-GBA4iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBA4iOS-Base-GBA4iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GBA4iOS-Base-GBA4iOS/Pods-GBA4iOS-Base-GBA4iOS.release.xcconfig"; sourceTree = "<group>"; };
-		2780A04D1BFEF65700610628 /* UITapticEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITapticEngine.h; sourceTree = "<group>"; };
-		2780A04E1BFEF65700610628 /* UIDevice+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Private.h"; sourceTree = "<group>"; };
-		2780A04F1BFEF65700610628 /* UIDevice+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Private.m"; sourceTree = "<group>"; };
 		4A0F09D4E8E87AAE2BF774E2 /* Pods.ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.ad hoc.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.ad hoc.xcconfig"; sourceTree = "<group>"; };
 		4BC912A8C9F0C9806CCC83B8 /* Pods.jailbreak.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.jailbreak.xcconfig; path = "Pods/Target Support Files/Pods/Pods.jailbreak.xcconfig"; sourceTree = "<group>"; };
 		58634C04FDFA33FF373F3027 /* libPods-GBA4iOS-Base-GBA4iOS-Simulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GBA4iOS-Base-GBA4iOS-Simulator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C6BF4F9F719B1132AF421A /* Pods-Base-GBA4iOS.jailbreak.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-GBA4iOS.jailbreak.xcconfig"; path = "Pods/Target Support Files/Pods-Base-GBA4iOS/Pods-Base-GBA4iOS.jailbreak.xcconfig"; sourceTree = "<group>"; };
 		672C1A6A58FF72B0B6EAB814 /* Pods-GBA4iOS-Base-GBA4iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBA4iOS-Base-GBA4iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GBA4iOS-Base-GBA4iOS/Pods-GBA4iOS-Base-GBA4iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		82D5D941B654155278B501D0 /* Pods-GBA4iOS-Base-GBA4iOS-Simulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBA4iOS-Base-GBA4iOS-Simulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GBA4iOS-Base-GBA4iOS-Simulator/Pods-GBA4iOS-Base-GBA4iOS-Simulator.debug.xcconfig"; sourceTree = "<group>"; };
 		6A36EEBA1A1A46CA0035DF1D /* GBAKeyboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBAKeyboardController.h; sourceTree = "<group>"; };
 		6A36EEBB1A1A46CA0035DF1D /* GBAKeyboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBAKeyboardController.m; sourceTree = "<group>"; };
 		6A36EEBF1A1A4BA00035DF1D /* iCadeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCadeReaderView.h; sourceTree = "<group>"; };
@@ -515,6 +511,7 @@
 		6A36EEC11A1A4BA00035DF1D /* iCadeState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCadeState.h; sourceTree = "<group>"; };
 		6A36EEC21A1A4BA00035DF1D /* LMBTControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMBTControllerView.h; sourceTree = "<group>"; };
 		6A36EEC31A1A4BA00035DF1D /* LMBTControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMBTControllerView.m; sourceTree = "<group>"; };
+		82D5D941B654155278B501D0 /* Pods-GBA4iOS-Base-GBA4iOS-Simulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBA4iOS-Base-GBA4iOS-Simulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GBA4iOS-Base-GBA4iOS-Simulator/Pods-GBA4iOS-Base-GBA4iOS-Simulator.debug.xcconfig"; sourceTree = "<group>"; };
 		8782243FD47ECE841FACE25A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		87EF3139E19421E58193F7F6 /* Pods-Base-GBA4iOS-Simulator.jailbreak.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-GBA4iOS-Simulator.jailbreak.xcconfig"; path = "Pods/Target Support Files/Pods-Base-GBA4iOS-Simulator/Pods-Base-GBA4iOS-Simulator.jailbreak.xcconfig"; sourceTree = "<group>"; };
 		911809C44511286BF809841B /* Pods-Base-GBA4iOS-Simulator.ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base-GBA4iOS-Simulator.ad hoc.xcconfig"; path = "Pods/Target Support Files/Pods-Base-GBA4iOS-Simulator/Pods-Base-GBA4iOS-Simulator.ad hoc.xcconfig"; sourceTree = "<group>"; };
@@ -1039,6 +1036,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19748DB31F4F11C2003D0A1B /* TapTic */ = {
+			isa = PBXGroup;
+			children = (
+				19748DB41F4F11D1003D0A1B /* UIDevice+Private.h */,
+				19748DB51F4F11D1003D0A1B /* UIDevice+Private.m */,
+			);
+			name = TapTic;
+			sourceTree = "<group>";
+		};
 		1AD65D7717D2DB7100E2CF0C /* Controller Skins */ = {
 			isa = PBXGroup;
 			children = (
@@ -1051,15 +1057,6 @@
 			name = "Controller Skins";
 			sourceTree = "<group>";
 		};
-		2780A04C1BFEF64C00610628 /* Taptic */ = {
-			isa = PBXGroup;
-			children = (
-				2780A04D1BFEF65700610628 /* UITapticEngine.h */,
-				2780A04E1BFEF65700610628 /* UIDevice+Private.h */,
-				2780A04F1BFEF65700610628 /* UIDevice+Private.m */,
-			);
-			name = Taptic;
-    };
 		6A36EEBE1A1A4BA00035DF1D /* iCade */ = {
 			isa = PBXGroup;
 			children = (
@@ -1688,7 +1685,7 @@
 		CC347BAF17A3C95500309436 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2780A04C1BFEF64C00610628 /* Taptic */,
+				19748DB31F4F11C2003D0A1B /* TapTic */,
 				6A36EEBE1A1A4BA00035DF1D /* iCade */,
 				BFAFF47C1840084500E3240A /* GBAControllerInput.h */,
 				BFAFF47D18400D7300E3240A /* GBAExternalController.h */,
@@ -2125,7 +2122,7 @@
 						};
 					};
 					CC2D56FB1798F2EC00C616EB = {
-						DevelopmentTeam = 6XVY5G3U44;
+						DevelopmentTeam = 9H53GLDW6D;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -2550,7 +2547,6 @@
 				CC5045161814DC69009F7B9E /* 7zCrc.c in Sources */,
 				CC491D4E17BCAA940060A107 /* GBASaveStateViewController.mm in Sources */,
 				CC5045091814DC69009F7B9E /* blargg_errors.cpp in Sources */,
-				2780A0501BFEF65700610628 /* UIDevice+Private.m in Sources */,
 				BFFDAE1219BC2FD100BE5F74 /* GBAControllerSkinGroup.m in Sources */,
 				BF359B98187A64C000B4CA53 /* NSDate+Comparing.m in Sources */,
 				CC7F4CA117B5E6F8006888CE /* UITouch+ControllerButtons.m in Sources */,
@@ -2703,6 +2699,7 @@
 				BFAA523B184F8B2B0019A90D /* GBASyncOperation.mm in Sources */,
 				CCFA717A179D2EAB00768D24 /* GuiTable1D.cc in Sources */,
 				CC5044F81814DC69009F7B9E /* Mode1.cpp in Sources */,
+				19748DB61F4F11D1003D0A1B /* UIDevice+Private.m in Sources */,
 				CC5045171814DC69009F7B9E /* 7zCrcOpt.c in Sources */,
 				CCFA71AB179D2FE400768D24 /* FilePicker.cc in Sources */,
 				CC50450B1814DC69009F7B9E /* fex.cpp in Sources */,
@@ -3112,6 +3109,7 @@
 				CODE_SIGN_ENTITLEMENTS = GBA4iOS/GBA4iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9H53GLDW6D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3323,6 +3321,7 @@
 				CODE_SIGN_ENTITLEMENTS = GBA4iOS/GBA4iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9H53GLDW6D;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GBA4iOS/GBA4iOS-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -3657,6 +3656,7 @@
 				CODE_SIGN_ENTITLEMENTS = GBA4iOS/GBA4iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9H53GLDW6D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3701,6 +3701,7 @@
 				CODE_SIGN_ENTITLEMENTS = GBA4iOS/GBA4iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9H53GLDW6D;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GBA4iOS/GBA4iOS-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -3863,6 +3864,7 @@
 				CODE_SIGN_ENTITLEMENTS = GBA4iOS/GBA4iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9H53GLDW6D;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

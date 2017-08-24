@@ -27,7 +27,7 @@
 {
     @synchronized(self)
     {
-        self.controllerType = LMBTControllerType_Custom;
+        self.controllerType = LMBTControllerType_iCade;
         [self LMBT_setOnStateString:onState offStateString:offState];
     }
 }
